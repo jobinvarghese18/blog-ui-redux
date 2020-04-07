@@ -12,5 +12,8 @@ export const startGetPosts = ()=>{
             const post = response.data
             dispatch(setPosts(post))
         })
+        .catch((err)=>{
+            console.log(err)
+        })
     }
 }

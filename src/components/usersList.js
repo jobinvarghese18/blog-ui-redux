@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {startGetUsers} from '../action/usersAction'
+import {Link} from 'react-router-dom'
 
 
 class UsersList extends  React.Component{
@@ -10,14 +11,15 @@ class UsersList extends  React.Component{
         }
     }
     render(){
-        console.log(this.props.users)
+
         return(
-            <div>UsersList
+            <div>
+                <h2>UsersList</h2>
             <ul>
                 {
                     this.props.users.map((user,i)=>{
                         return(
-                            <li key={i}>{user.name}</li>
+                            <li key={i}><Link to={`/users/${user.id}`}>{user.name}</Link></li>
                         )
                     })
                 }
